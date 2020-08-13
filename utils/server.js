@@ -1,27 +1,19 @@
-# wx-axios
-微信版axios
-
-# wx.axios基础版本
-*支持基本的请求功能及拦截器功能*
-demo
-```
+import j from '../axios/lib/core/axios.js'
 var h = j.create({
-  baseUrl: 'xxxxx'
+  baseUrl: 'https://camp.h5.aixbx.com'
 })
 h.Interceptor.request.use(function (res) {
-  // 请求拦截器
+  console.log('2222')
+  console.log(res)
   return res
 })
 h.Interceptor.response.use(function (res) {
-  // 返回拦截器
+  console.log('7777')
+  console.log(res)
   return res.data
 })
 h.post('/roleService/getUserPermission.xco',
   { module_code: 'task_index' }).then((res) => {
     console.log(res);
+    console.log('ddddd');
   })
-```  
-
-
-
-# 后面会继续更新 添加上传文件 如有任何问题请提交issue 
